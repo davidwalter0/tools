@@ -1,3 +1,19 @@
+/*
+#!/bin/bash
+
+export CERT_DIR=/etc/certs/example.com
+export APP_HOST=example.com;
+export APP_PORT=8888 ;
+export APP_ORGANIZATION=${APP_HOST} ;
+export APP_CERT=${CERT_DIR}/example.com.crt ;
+export APP_KEY=${CERT_DIR}/example.com.key ;
+export APP_PATH=dist;
+
+# local variables:
+# mode: shell-script
+# end:
+
+*/
 // https://gowebexamples.com/sessions/
 /*
 $ go run sessions.go
@@ -16,12 +32,58 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"os"
+	"strings"
+	"time"
 
 	"github.com/gorilla/sessions"
 
+	"github.com/davidwalter0/go-cfg"
+	// "github.com/davidwalter0/go-tracer"
 	"github.com/davidwalter0/tools/trace/httptrace"
+	"github.com/jehiah/go-strftime"
 )
+
+var (
+	app  App
+	done = make(chan bool)
+
+	// Build version build string
+	Build string
+
+	// Commit version commit string
+	Commit string
+)
+
+// Now current formatted time
+func Now() string {
+	format := "%Y.%m.%d.%H.%M.%S.%z"
+	now := time.Now()
+	return strftime.Format(format, now)
+}
+
+func init() {
+	var err error
+	if err = cfg.ProcessHoldFlags("APP", &app); err != nil {
+		log.Fatalf("%v\n", err)
+	}
+	cfg.Freeze()
+	array := strings.Split(os.Args[0], "/")
+	if false {
+		me := array[len(array)-1]
+		fmt.Println(me, "version built at:", Build, "commit:", Commit)
+	}
+}
+
+// App application configuration struct
+type App struct {
+	Cert string
+	Key  string
+	Host string
+	Port string
+}
 
 var (
 	// key must be 16, 24 or 32 bytes long (AES-128, AES-192 or AES-256)
@@ -67,31 +129,16 @@ func logout(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	var err error
 	http.HandleFunc("/secret", httptrace.EchoMeta(secret))
 	http.HandleFunc("/login", httptrace.EchoMeta(login))
 	http.HandleFunc("/logout", httptrace.EchoMeta(logout))
-	fmt.Println("Listening on :8080")
-	http.ListenAndServe(":8080", nil)
+
+	fmt.Println("PORT on which  " + ":" + app.Port)
+	fmt.Println("HOST interface " + ":" + app.Host)
+	fmt.Printf("HTTPS/Listening on %s:%s\n", app.Host, app.Port)
+	var url = fmt.Sprintf("%s:%s", app.Host, app.Port)
+	if err = http.ListenAndServeTLS(url, app.Cert, app.Key, nil); err != nil {
+		log.Fatal(url, err)
+	}
 }
-
-// func dump(w http.ResponseWriter, r *http.Request) {
-// 	fmt.Println(trace.RequestMeta(r))
-// }
-
-// func dump(w http.ResponseWriter, r *http.Request) {
-// 	for k, v := range r.Header {
-// 		// fmt.Printf("%-32.32s -%48.48s\n", k,v)
-// 		var typeT = interface{}(v)
-// 		switch typeT.(type) {
-// 		case string:
-// 			fmt.Printf("%-32.32s -%48.48s\n", k, v)
-// 		case []string:
-// 			fmt.Printf("%-32.32s\n", k)
-// 			for x, cookie := range v {
-// 				fmt.Printf("%4d %s", x, cookie)
-// 			}
-// 		}
-// 		fmt.Println()
-// 	}
-
-// }
