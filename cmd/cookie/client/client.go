@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/davidwalter0/tools/trace/httptrace"
+	"github.com/davidwalter0/toolstrace/httptrace"
 )
 
 func main() {
@@ -50,5 +50,6 @@ func main() {
 	// 	panic(nil)
 	// }
 	fmt.Println(httptrace.RequestMeta(r))
+	fmt.Println(JSONify(r.Jar))
 	// trace.EchoRequestMeta(w, r)
 }

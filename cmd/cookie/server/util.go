@@ -1,24 +1,23 @@
-package tlsconfig
+package main
 
 import (
 	"crypto/tls"
 	"crypto/x509"
 	"io/ioutil"
+	"net/http"
 )
 
-// NewTLSConfig from URI and request action type in
-// GET,POST,PUT,HEADER...
-func NewTLSConfig(Cert, Key, Ca string) (*tls.Config, error) {
+func Transport(tlsConfig *tls.Config) *http.Transport {
+	return &http.Transport{
+		TLSClientConfig: tlsConfig,
+	}
+}
+
+func TLSConfig(Ca string) (*tls.Config, error) {
 	var err error
-	var cert tls.Certificate
 	var caCert []byte
 	var caCertAuthPool *x509.CertPool
 	var tlsConfig *tls.Config
-
-	// Load client cert
-	if cert, err = tls.LoadX509KeyPair(Cert, Key); err != nil {
-		return nil, err
-	}
 
 	// Load CA cert
 	if caCert, err = ioutil.ReadFile(Ca); err != nil {
@@ -30,9 +29,9 @@ func NewTLSConfig(Cert, Key, Ca string) (*tls.Config, error) {
 
 	// Setup HTTPS client
 	tlsConfig = &tls.Config{
-		MinVersion:   tls.VersionTLS12,
-		Certificates: []tls.Certificate{cert},
-		RootCAs:      caCertAuthPool,
+		MinVersion: tls.VersionTLS12,
+		//		Certificates: []tls.Certificate{cert},
+		RootCAs: caCertAuthPool,
 	}
 
 	tlsConfig.BuildNameToCertificate()

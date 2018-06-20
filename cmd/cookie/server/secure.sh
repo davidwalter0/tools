@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export CERT_DIR=/etc/certs/${APP_HOST}
-export APP_PORT=8080
+export APP_PORT=8000
 export APP_ORGANIZATION=${APP_HOST}
 export APP_URI="https://${APP_HOST}:${APP_PORT}"
 export APP_CERT=${CERT_DIR}/${APP_HOST}.crt
@@ -12,7 +12,9 @@ if [[ ! ${APP_HOST:-} ]]; then
     echo export APP_HOST=tls-host-name
     exit 1
 fi
-go run client.go util.go
+
+go run secure.go util.go
+
 # local variables:
 # mode: shell-script
 # end:

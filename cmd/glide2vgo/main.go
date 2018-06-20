@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 
 	"github.com/davidwalter0/go-cfg"
-	. "github.com/davidwalter0/tools/util"
-	. "github.com/davidwalter0/tools/util/types"
+	. "github.com/davidwalter0/toolsutil"
+	. "github.com/davidwalter0/toolsutil/types"
 
 	yaml "gopkg.in/yaml.v2"
 )

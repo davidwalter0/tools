@@ -12,7 +12,8 @@ if [[ ! ${APP_HOST:-} ]]; then
     echo export APP_HOST=tls-host-name
     exit 1
 fi
-go run client.go util.go
+go run server.go 
+
 # local variables:
 # mode: shell-script
 # end:

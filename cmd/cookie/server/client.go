@@ -1,20 +1,23 @@
 package main
 
 import (
-	// "crypto/tls"
-	// "crypto/x509"
+	"crypto/tls"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"net/http/cookiejar"
+	"net/url"
 	"os"
 	"strings"
 
 	"github.com/davidwalter0/go-cfg"
 	// "github.com/davidwalter0/go-tracer"
-	"github.com/davidwalter0/tools/trace/httptrace"
+	//"github.com/davidwalter0/toolstrace/httptrace"
 )
 
 type App struct {
+	Host string `json:"host" doc:"Host for domain info"`
 	Cert string `json:"cert" doc:"A PEM eoncoded certificate file"`
 	Key  string `json:"key"  doc:"A PEM encoded private key file"`
 	Ca   string `json:"ca"   doc:"A PEM eoncoded CA certificate file"`
@@ -45,41 +48,58 @@ func init() {
 	fmt.Println(me, "version built at:", Build, "commit:", Commit)
 }
 
+var SetCookie = "Set-Cookie"
+
 func main() {
 	const (
 		login  = "/login"
 		secret = "/secret"
 	)
-	var r *http.Response
+	var rsp *http.Response
 
 	var err error
 	var client *http.Client
-	var request *http.Request
+	var tlsConfig *tls.Config
+	// var request *http.Request
 	//NewTLSClientTracedRequest(Cert, Key, Ca, URI, Action string)
-	client, request, err = httptrace.NewTLSClientTracedRequest(
-		// client, _, err = httptrace.NewTLSClientTracedRequest(
-		app.Cert,
-		app.Key,
-		app.Ca,
-		app.URI+login,
-		"GET",
-	)
-	// client := &http.Client{Transport: transport}
+	// client, request, err = httptrace.NewTLSClientTracedRequest(
+	// 	// client, _, err = httptrace.NewTLSClientTracedRequest(
+	// 	app.Cert,
+	// 	app.Key,
+	// 	app.Ca,
+	// 	app.URI+login,
+	// 	"GET",
+	// )
+	var transport *http.Transport
+	if tlsConfig, err = TLSConfig(app.Ca); err != nil {
+		log.Fatal(err)
+	}
+	transport = Transport(tlsConfig)
+	// client := &http.Client{
+	// 	Jar: jar,
 
-	// // Do GET something
-	// if r, err = client.Get(app.URI + login); err != nil {
-	// 	fmt.Println(err)
-	// 	os.Exit(1)
 	// }
-	// if r, err = client.Get(app.URI + login); err != nil {
-	// 	fmt.Println(err)
-	// 	os.Exit(1)
-	// }
-	if r, err = client.Do(request); err != nil {
+
+	client = &http.Client{
+		Transport: transport,
+		Jar:       CookieJar(),
+	}
+
+	postData := url.Values{}
+	//	postData.Set("keyword", "尹相杰")
+	postData.Set("keyword", "KeywordValue")
+
+	var r *http.Request
+	if r, err = http.NewRequest("POST", app.URI+login, strings.NewReader(postData.Encode())); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	defer r.Body.Close()
+
+	r.Header.Add("Content-Type", "application/json")
+	if rsp, err = client.Do(r); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 
 	var data []byte
 	// Dump response
@@ -88,20 +108,52 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println(string(data))
+	fmt.Println("Login", string(data))
+	r.Body.Close()
 
-	r, err = client.Get(app.URI + secret)
+	if r, err = http.NewRequest("POST", app.URI+secret, strings.NewReader(postData.Encode())); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	r.Header.Add("Content-Type", "application/json")
+	// r.Header.Add("Cookie", fmt.Sprintf("%s=%s", SetCookie, cookieValue))
+	// r.Header.Add("Cookie", fmt.Sprintf("%s=%s", MapKey2, cookieValue))
+	if rsp, err = client.Do(r); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	defer r.Body.Close()
+	defer rsp.Body.Close()
 
 	// Dump response
-	data, err = ioutil.ReadAll(r.Body)
+	data, err = ioutil.ReadAll(rsp.Body)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println(string(data))
+	fmt.Println("Secret", string(data))
+}
+
+func CookieJar() *cookiejar.Jar {
+	var login = "/login"
+	var MapKey = "Set-Cookie"
+	jar, _ := cookiejar.New(nil)
+	var cookies = []*http.Cookie{}
+	var cookieValue = "MTUyNzQ3OTE1MnxEdi1CQkFFQ180SUFBUkFCRUFBQUpmLUNBQUVHYzNSeWFXNW5EQThBRFdGMWRHaGxiblJwWTJGMFpXUUVZbTl2YkFJQ0FBRT18jT6qXznIa7VOltg_b0j9XQb8IVx2ABqp7JNkVs_QN5g="
+	cookie := &http.Cookie{
+		Name:   MapKey,
+		Value:  cookieValue,
+		Path:   "/",
+		Domain: app.Host,
+	}
+	cookies = append(cookies, cookie)
+	u, _ := url.Parse(app.URI + login)
+	jar.SetCookies(u, cookies)
+	fmt.Println(jar.Cookies(u))
+	return jar
 }

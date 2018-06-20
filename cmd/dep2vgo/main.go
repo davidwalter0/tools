@@ -1,9 +1,11 @@
+// build -tags netgo -ldflags '-w -s'
+// install -tags netgo -ldflags '-w -s'
 // Tomljson reads TOML and converts to JSON.
 //
 // Usage:
 //   cat file.toml | tomljson > file.json
 //   tomljson file1.toml > file.json
-package main // import "github.com/davidwalter0/tools/cmd/dep2vgo"
+package main // import "github.com/davidwalter0/toolscmd/dep2vgo"
 
 import (
 	"fmt"
@@ -13,8 +15,8 @@ import (
 	"sort"
 
 	"github.com/davidwalter0/go-cfg"
-	. "github.com/davidwalter0/tools/util"
-	. "github.com/davidwalter0/tools/util/types"
+	. "github.com/davidwalter0/toolsutil"
+	. "github.com/davidwalter0/toolsutil/types"
 )
 
 // type _ignore_ util.VersionMap
