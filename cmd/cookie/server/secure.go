@@ -17,8 +17,8 @@ import (
 	"github.com/jehiah/go-strftime"
 
 	"github.com/davidwalter0/go-cfg"
-	//	. "github.com/davidwalter0/toolsutil"
-	"github.com/davidwalter0/toolsutil/signalhandler"
+	//	. "github.com/davidwalter0/tools/util"
+	"github.com/davidwalter0/tools/util/signalhandler"
 )
 
 var (

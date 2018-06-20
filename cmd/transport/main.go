@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "../transport"
+	//	. "../transport"
 
 	"log"
 	"net/http"

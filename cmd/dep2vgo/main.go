@@ -5,7 +5,7 @@
 // Usage:
 //   cat file.toml | tomljson > file.json
 //   tomljson file1.toml > file.json
-package main // import "github.com/davidwalter0/toolscmd/dep2vgo"
+package main // import "github.com/davidwalter0/tools/cmd/dep2vgo"
 
 import (
 	"fmt"
@@ -15,8 +15,8 @@ import (
 	"sort"
 
 	"github.com/davidwalter0/go-cfg"
-	. "github.com/davidwalter0/toolsutil"
-	. "github.com/davidwalter0/toolsutil/types"
+	. "github.com/davidwalter0/tools/util"
+	. "github.com/davidwalter0/tools/util/types"
 )
 
 // type _ignore_ util.VersionMap

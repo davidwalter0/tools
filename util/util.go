@@ -1,5 +1,5 @@
 // -*- mode: go -*-
-package util // import "github.com/davidwalter0/toolsutil"
+package util // import "github.com/davidwalter0/tools/util"
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 
 	"github.com/blang/semver"
 
-	. "github.com/davidwalter0/toolsutil/types"
+	. "github.com/davidwalter0/tools/util/types"
 )
 
 const (

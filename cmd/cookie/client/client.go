@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/davidwalter0/toolstrace/httptrace"
+	"github.com/davidwalter0/tools/trace/httptrace"
 )
 
 func main() {

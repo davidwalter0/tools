@@ -13,7 +13,7 @@ import (
 
 	"github.com/davidwalter0/go-cfg"
 	// "github.com/davidwalter0/go-tracer"
-	//"github.com/davidwalter0/toolstrace/httptrace"
+	//"github.com/davidwalter0/tools/trace/httptrace"
 )
 
 type App struct {

@@ -43,10 +43,10 @@ import (
 
 	"github.com/davidwalter0/go-cfg"
 	// "github.com/davidwalter0/go-tracer"
-	"github.com/davidwalter0/toolstrace/httptrace"
+	"github.com/davidwalter0/tools/trace/httptrace"
 
 	"github.com/jehiah/go-strftime"
-	// "github.com/davidwalter0/toolsutil/tlsconfig"
+	// "github.com/davidwalter0/tools/util/tlsconfig"
 )
 
 var (

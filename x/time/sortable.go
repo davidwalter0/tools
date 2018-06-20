@@ -1,4 +1,4 @@
-package time // import "github.com/davidwalter0/toolsx/time"
+package time // import "github.com/davidwalter0/tools/x/time"
 
 import (
 	// "fmt"

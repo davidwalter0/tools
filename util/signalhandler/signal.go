@@ -1,4 +1,4 @@
-package signalhandler // import "github.com/davidwalter0/toolsutil/signalhandler"
+package signalhandler // import "github.com/davidwalter0/tools/util/signalhandler"
 
 import (
 	"fmt"
