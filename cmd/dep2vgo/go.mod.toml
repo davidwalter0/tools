@@ -1,0 +1,22 @@
+module github.com/davidwalter0/glide2vgo/toml
+
+require (
+	fake/path/package latest
+	fake/path/package2 v0.0.1
+	github.com/golang/protobuf v1.0.0
+	github.com/h2non/filetype v1.0.5
+	github.com/hanwen/go-fuse a9ddcb8a4b609500fc59c89ccc9ee05f00a5fefd
+	github.com/jacobsa/crypto c73681c634de898c869684602cf0c0d2ce938c4d
+	github.com/pkg/errors v0.8.0
+	github.com/pkg/xattr v0.3.0
+	github.com/rfjakob/eme 2222dbd4ba467ab3fc7e8af41562fcfe69c0d770
+	github.com/urfave/cli v1.20.0
+	golang.org/x/crypto 374053ea96cb300f8671b8d3b07edeeb06e203b4
+	golang.org/x/sync 1d60e4601c6fd243af51cc01ddf169918a5407ca
+	golang.org/x/sys 01acb38716e021ed1fc03a602bdb5838e1358c5e
+)
+
+
+// local variables:
+// mode: vgo
+// end:
