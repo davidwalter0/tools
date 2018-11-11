@@ -152,6 +152,7 @@ func CookieJar() *cookiejar.Jar {
 		Domain: app.Host,
 	}
 	cookies = append(cookies, cookie)
+	fmt.Println("URI", app.URI+login)
 	u, _ := url.Parse(app.URI + login)
 	jar.SetCookies(u, cookies)
 	fmt.Println(jar.Cookies(u))

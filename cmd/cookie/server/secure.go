@@ -18,7 +18,6 @@ import (
 
 	"github.com/davidwalter0/go-cfg"
 	//	. "github.com/davidwalter0/tools/util"
-	"github.com/davidwalter0/tools/util/signalhandler"
 )
 
 var (
@@ -85,8 +84,8 @@ func httpsURI() string {
 }
 
 // NewShutdown(gs *GracefulShutdown) only log info shutting down
-func NewShutdown() (gs *signalhandler.GracefulShutdown) {
-	gs = signalhandler.NewGracefulShutdown("Secure TLS Server Example", nil)
+func NewShutdown() (gs *sigaction.GracefulShutdown) {
+	gs = sigaction.NewGracefulShutdown("Secure TLS Server Example", nil)
 
 	gs.Graceful = func() {
 		log.Printf("\n\n*Secure: %s\n", gs.Message)
