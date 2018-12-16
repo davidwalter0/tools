@@ -12,9 +12,6 @@ github.com/btcsuite/btcutil v0.0.0-20180706230648-ab6388e0c60a h1:RQMUrEILyYJEoA
 github.com/btcsuite/btcutil v0.0.0-20180706230648-ab6388e0c60a/go.mod h1:+5NJ2+qvTyV9exUAL/rxXi3DcLg2Ts+ymUAY5y4NvMg=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/davidwalter0/go-cfg v0.0.0-20180208035824-f3fa8e186fbb/go.mod h1:33KCPu0JW88DjRTK9zMsJ7JTedGrmWoTaPJSdWgNc3M=
-github.com/davidwalter0/go-cfg v1.0.0 h1:PWINKhy/ROSXhEzIp1GvxQiNI4YGjnqZecCv3j9HzEs=
-github.com/davidwalter0/go-cfg v1.0.0/go.mod h1:Om7n8o1xht9TFv213eBDAE3IBtUIE53Th/NBQ/7JDKw=
 github.com/davidwalter0/go-flag v0.1.5 h1:sdvWLCUiEPsAuYgSdJ6eqU4IyeFQpBQs3s9xQ5z8qJ8=
 github.com/davidwalter0/go-flag v0.1.5/go.mod h1:j6Cr+uwp7h8kAAS5dIZYJrVv+BN7kujSbH8ySbZuqhQ=
 github.com/davidwalter0/go-ftp v0.0.0-20170904021725-3fc38f5a0fb5 h1:vpJeuln5ITo+zhdIfmq4zJzknezqvfolrd5o8WYjtLQ=
