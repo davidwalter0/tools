@@ -5,7 +5,7 @@ require (
 	github.com/blang/semver v0.0.0-20180209074517-557ee991fbcf
 	github.com/btcsuite/btcutil v0.0.0-20180706230648-ab6388e0c60a // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/davidwalter0/go-cfg v1.0.0
+	github.com/davidwalter0/go-cfg v0.0.3
 	github.com/davidwalter0/go-signalstor v0.2.0
 	github.com/davidwalter0/transform v0.0.0-20170618010736-a7a822a3f327
 	github.com/go-sql-driver/mysql v1.4.0 // indirect
