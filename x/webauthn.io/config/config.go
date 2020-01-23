@@ -13,6 +13,5 @@ type Config struct {
 	Key          string `json:"key"           yaml:"key"           doc:"key file path"`
 	Ca           string `json:"ca"            yaml:"ca"            doc:"cert authority file path"`
 	Config       string `json:"config"        yaml:"config"        doc:"json or yaml config file"`
-	DumpCfg      bool   `json:"dumpcfg"       yaml:"dumpcfg"       doc:"dump config and exit"`
 	Debug        bool   `json:"debug"         yaml:"debug"         doc:"be verbose"`
 }

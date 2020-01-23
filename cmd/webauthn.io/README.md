@@ -2,16 +2,17 @@
 The following environment variables must be defined or the json must be configured
 
 ```
-    APP_PORT=80
-    APP_SECURE_PORT=443
+    PORT=80
+    SECURE_PORT=443
+    CERT_DIR=/etc/certs/${ADDRESS}
+    ORGANIZATION=${ADDRESS}
+    URI="https://${ADDRESS}:${PORT}"
+    CERT=${CERT_DIR}/${ADDRESS}.crt
+    KEY=${CERT_DIR}/${ADDRESS}.key
+    CA=${CERT_DIR}/ca.crt
 
-    CERT_DIR=/etc/certs/${APP_HOST}
-    APP_ORGANIZATION=${APP_HOST}
-    APP_URI="https://${APP_HOST}:${APP_PORT}"
-    APP_CERT=${CERT_DIR}/${APP_HOST}.crt
-    APP_KEY=${CERT_DIR}/${APP_HOST}.key
-    APP_CA=${CERT_DIR}/ca.crt
 ```
+When using the script it assumes the address will be set externally
 
 Modified from : https://github.com/duo-labs/webauthn.io
 

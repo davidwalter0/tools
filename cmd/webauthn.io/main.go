@@ -19,15 +19,37 @@ var app = &App{
 
 func main() {
 	var err error
-	// config, err := config.LoadConfig("config.json")
-	// if err != nil {
-	// 	log.Fatal(err)
+
+	// Assume if configuration loads from file, that the environment and
+	// flags don't need to be processed
+	// err = cfg.Parse(app.WebAuthn)
+	// if err != nil || !app.valid() {
+	// 	log.Info(err)
+	// }
+	// fmt.Println("------------------------------------------------------------------------")
+	// app.DumpJSON()
+	// err = app.Parse()
+	// fmt.Println("------------------------------------------------------------------------")
+	// app.DumpJSON()
+	// if err != nil || !app.valid() {
+	// 	log.Info(err)
+	// }
+	// if app.WebAuthn.Debug {
+	// 	fmt.Println("------------------------------------------------------------------------")
+	// 	app.DumpYAML()
+	// 	fmt.Println("------------------------------------------------------------------------")
+	// 	app.DumpJSON()
 	// }
 
-	// app.WebAuthn = config
+	// if err = cfg.Parse(app.WebAuthn); err != nil {
+	// 	log.Info(err)
+	// 	os.Exit(1)
+	// }
 
-	app.DumpYAML()
-	app.DumpJSON()
+	// if err = app.Parse(); err != nil {
+	// 	log.Info(err)
+	// 	os.Exit(1)
+	// }
 
 	if err = cfg.Parse(app.WebAuthn); err != nil {
 		log.Info(err)
@@ -41,8 +63,12 @@ func main() {
 
 	fmt.Println(app.Parse())
 
+	// if app.WebAuthn.Debug {
+	fmt.Println("------------------------------------------------------------------------")
 	app.DumpYAML()
+	fmt.Println("------------------------------------------------------------------------")
 	app.DumpJSON()
+	// }
 
 	err = models.Setup(app.WebAuthn)
 	if err != nil {
