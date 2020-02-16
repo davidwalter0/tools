@@ -3,35 +3,33 @@ package main
 import (
 	"crypto"
 	"fmt"
-	. "github.com/davidwalter0/tools/hash"
-
-	"github.com/davidwalter0/go-signalstor"
+	"github.com/davidwalter0/tools/hash"
 )
 
 func main() {
 	{
-		var Sha256EmptyString = NewCryptoHashableStream(crypto.SHA256, []byte(""))
+		var Sha256EmptyString = hash.NewCryptoHashableStream(crypto.SHA256, []byte(""))
 		// fmt.Println("", Sha256EmptyString, Sha256EmptyString.Sum().Hex())
-		var equal = Sha256EmptyString.Sum().Hex() == Sha256EmptyStringHashCompare
+		var equal = Sha256EmptyString.Sum().Hex() == hash.Sha256EmptyStringHashCompare
 		fmt.Println(fmt.Sprintf("%v", equal),
 			Sha256EmptyString.Sum().Hex(), "==",
-			Sha256EmptyStringHashCompare)
-		PrintSpace16(Sha256EmptyStringHashCompare)
-		PrintSpace16(Sha256EmptyString.Sum().Hex())
+			hash.Sha256EmptyStringHashCompare)
+		hash.PrintSpace16(hash.Sha256EmptyStringHashCompare)
+		hash.PrintSpace16(Sha256EmptyString.Sum().Hex())
 	}
 	{
-		var Sha3256EmptyString = NewCryptoHashableStream(crypto.SHA3_256, []byte(""))
+		var Sha3256EmptyString = hash.NewCryptoHashableStream(crypto.SHA3_256, []byte(""))
 		// fmt.Println("", Sha3256EmptyString, Sha3256EmptyString.Sum().Hex())
-		var equal = Sha3256EmptyString.Sum().Hex() == Sha3256EmptyStringHashCompare
+		var equal = Sha3256EmptyString.Sum().Hex() == hash.Sha3256EmptyStringHashCompare
 		fmt.Println(fmt.Sprintf("%v", equal),
 			Sha3256EmptyString.Sum().Hex(), "==",
-			Sha3256EmptyStringHashCompare)
-		PrintSpace16(Sha3256EmptyStringHashCompare)
-		PrintSpace16(Sha3256EmptyString.Sum().Hex())
+			hash.Sha3256EmptyStringHashCompare)
+		hash.PrintSpace16(hash.Sha3256EmptyStringHashCompare)
+		hash.PrintSpace16(Sha3256EmptyString.Sum().Hex())
 	}
 	fmt.Println()
 	{
-		var hajime = NewHajime(crypto.SHA256, "")
+		var hajime = hash.NewHajime(crypto.SHA256, "")
 		// fmt.Println(hajime.Marshal())
 		// fmt.Println(hajime.Marshal().Sum())
 		fmt.Println(hajime.Marshal().Sum().Hex())
@@ -42,7 +40,7 @@ func main() {
 	}
 	fmt.Println()
 	{
-		var hajime = NewHajime(crypto.SHA3_256, "")
+		var hajime = hash.NewHajime(crypto.SHA3_256, "")
 		// fmt.Println(hajime.Marshal())
 		// fmt.Println(hajime.Marshal().Sum())
 		fmt.Println(hajime.Marshal().Sum().Hex())
@@ -52,7 +50,14 @@ func main() {
 		// fmt.Println(hajime)
 	}
 	fmt.Println()
-	msg := signalstor.SmsMessage{
+
+	msg := struct {
+		Timestamp string
+		Date      string
+		Address   string
+		Body      string
+		Type      string
+	}{
 		Timestamp: "date",
 		Date:      "readable_date",
 		Address:   "address",
@@ -60,7 +65,7 @@ func main() {
 		Type:      "1",
 	}
 	{
-		var hajime = NewHajime(crypto.SHA256, msg)
+		var hajime = hash.NewHajime(crypto.SHA256, msg)
 		// fmt.Println(hajime.Marshal())
 		// fmt.Println(hajime.Marshal().Sum())
 		fmt.Println(hajime.Marshal().Sum().Hex())
@@ -70,7 +75,7 @@ func main() {
 		// fmt.Println(hajime)
 	}
 	{
-		var hajime = NewHajime(crypto.SHA3_256, msg)
+		var hajime = hash.NewHajime(crypto.SHA3_256, msg)
 		// fmt.Println(hajime.Marshal())
 		// fmt.Println(hajime.Marshal().Sum())
 		fmt.Println(hajime.Marshal().Sum().Hex())
