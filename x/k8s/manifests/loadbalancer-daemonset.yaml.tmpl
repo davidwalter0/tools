@@ -1,0 +1,50 @@
+---
+# for versions before 1.8.0 use apps/v1beta1
+kind: DaemonSet
+apiVersion: apps/v1beta2
+metadata:
+  name: {{ .Appl }}
+  namespace: default
+  labels:
+    app: {{ .Appl }}
+spec:
+  selector:
+    matchLabels:
+      name: {{ .Appl }}
+  template:
+    metadata:
+      labels:
+        name: {{ .Appl }}
+    spec:
+      tolerations:
+        - key: node-role.kubernetes.io/loadbalancer
+          operator: Exists
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/loadbalancer
+                operator: Exists
+      containers:
+      - name: {{ .Appl }}
+        image: davidwalter/{{ .Image }}:{{.Tag}}
+        imagePullPolicy: Always
+        # imagePullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
+        args:
+        - "/opt/sbin/{{ .Appl }}"
+        - "--linkdevice=eth2"
+        - "--debug"
+      terminationGracePeriodSeconds: 30
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      serviceAccount: {{ .Appl }}
+
+
+# local variables:
+# mode: yaml
+# end:
+

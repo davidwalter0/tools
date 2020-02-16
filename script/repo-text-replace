@@ -1,0 +1,71 @@
+#!/usr/local/bin/bash
+
+# ########################################################################
+# Modify a git repo by cleaning up / removing references to vestigial,
+# secret or corrected data and rewriting the history
+# Replace old text (map key) with new text (map value)
+# ########################################################################
+
+# ########################################################################
+# Backup your repository prior to executing this command.
+# ########################################################################
+# ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ***
+# This will invalidate references to this repository.
+# This command rewrites the git repository history
+# ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ***
+# ########################################################################
+
+# ########################################################################
+# Process to use and test
+# ########################################################################
+# 1. backup your repo
+# 2. backup your repo
+# 3. backup your repo
+# 4. Did you backup your repo?
+# 5. edit the key values for the hash map SEARCH_REPLACE_MAP in kvmap.sh
+# 6. test on the backup
+# 7. *** touch .${0}.ready
+# 8. run with real mapping changes
+# 9. finalize changes test deployments, git push and whatever
+#10. git gc
+
+# When DRY_RUN is 1, try to do no harm, print commands
+# Set DRY_RUN to 0 and
+declare DRY_RUN=1
+
+script_dir=$(readlink -f ${0%/*})
+. ${script_dir}/kvmap.sh
+setup-kv-map
+list-kv-map SEARCH_REPLACE_MAP
+
+. ${script_dir}/functions.sh
+
+validate_git_find_grep
+validate_arguments ${@}
+validate_git_repo
+validate_ready
+
+Info1 running script from here ${script_dir}
+
+keys=$(for key in "${!SEARCH_REPLACE_MAP[@]}"; do echo [${key}]; done)
+Info2 Keys ${keys}
+for search in "${!SEARCH_REPLACE_MAP[@]}"; do
+    replace="${SEARCH_REPLACE_MAP[${search}]}"
+    Info2 "Searching for  [${search}]"
+    Info2 "Replacing with [${replace}]"
+    Info1 "git find-grep "${search}" | cut -f 2 -d : | sort -u"
+    for filename in $(git find-grep "${search}" | cut -f 2 -d : | sort -u); do
+        Info1 Editing filename ${filename} to replace ${search} with ${replace}
+
+        if (( DRY_RUN )) ; then
+            Warning2 Debug printing not executing
+            Warning1 git filter-branch -f \
+                --tree-filter "test -f ${filename} && sed -i 's,${search},${replace},g' ${filename} || \
+echo 'skipping filename ${filename}'" -- --all
+        else
+            git filter-branch -f \
+                --tree-filter "test -f ${filename} && sed -i 's,${search},${replace},g' ${filename} || \
+echo 'skipping filename ${filename}'" -- --all
+       fi
+    done
+done

@@ -1,0 +1,311 @@
+[0](⎇ master) strip-ansi $ go build -ldflags '-w -s'
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: finding github.com/davidwalter0/go-cfg v1.0.0
+go: finding github.com/shurcooL/webdavfs v0.0.0-20170829043945-18c3829fa133
+go: finding github.com/dustin/go-humanize v1.0.0
+go: finding github.com/shurcooL/reactions v0.0.0-20181006231557-f2e0b4ca5b82
+go: finding github.com/shurcooL/gopherjslib v0.0.0-20160914041154-feb6d3990c2c
+go: finding github.com/jellevandenhooff/dkim v0.0.0-20150330215556-f50fe3d243e1
+go: finding github.com/shurcooL/component v0.0.0-20170202220835-f88ec8f54cc4
+go: finding github.com/shurcooL/htmlg v0.0.0-20170918183704-d01228ac9e50
+go: finding github.com/neelance/astrewrite v0.0.0-20160511093645-99348263ae86
+go: finding google.golang.org/genproto v0.0.0-20181109154231-b5d43981345b
+go: finding go4.org v0.0.0-20180809161055-417644f6feb5
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: github.com/davidwalter0/go-cfg@v1.0.0: unknown revision v1.0.0
+go: finding github.com/DataDog/zstd v1.3.5
+go: finding gopkg.in/resty.v1 v1.12.0
+go: finding golang.org/x/oauth2 v0.0.0-20181120190819-8f65e3013eba
+go: finding dmitri.shuralyov.com/state v0.0.0-20180228185332-28bcc343414c
+go: finding golang.org/x/sys v0.0.0-20181029174526-d69651ed3497
+go: finding sourcegraph.com/sourcegraph/go-diff v0.5.0
+go: finding golang.org/x/net v0.0.0-20181029044818-c44066c5c816
+go: finding github.com/shurcooL/httpfs v0.0.0-20171119174359-809beceb2371
+go: finding golang.org/x/crypto v0.0.0-20181030102418-4d3f4d9ffa16
+go: finding dmitri.shuralyov.com/app/changes v0.0.0-20180602232624-0a106ad413e3
+go: finding github.com/gliderlabs/ssh v0.1.1
+go: finding github.com/shurcooL/events v0.0.0-20181021180414-410e4ca65f48
+go: finding grpc.go4.org v0.0.0-20170609214715-11d0a25b4919
+go: finding github.com/shurcooL/home v0.0.0-20190204141146-5c8ae21d4240
+go: finding github.com/bradfitz/go-smtpd v0.0.0-20170404230938-deb6d6237625
+go: finding cloud.google.com/go v0.31.0
+go: finding github.com/coreos/go-systemd v0.0.0-20181012123002-c6f51f82210d
+go: finding github.com/shurcooL/home v0.0.0-20181020052607-80b7ffcb30f9
+go: finding github.com/shurcooL/github_flavored_markdown v0.0.0-20181002035957-2122de532470
+go: finding github.com/shurcooL/highlight_go v0.0.0-20181028180052-98c3abbbae20
+go: finding golang.org/x/tools v0.0.0-20181122213734-04b5d21e00f1
+go: finding github.com/shurcooL/notifications v0.0.0-20181007000457-627ab5aea122
+go: finding dmitri.shuralyov.com/html/belt v0.0.0-20180602232347-f7d459c86be0
+go: finding github.com/sourcegraph/annotate v0.0.0-20160123013949-f4cad6c6324d
+go: finding github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
+go: finding github.com/kr/pty v1.1.3
+go: finding github.com/googleapis/gax-go v2.0.0+incompatible
+go: finding github.com/shurcooL/httperror v0.0.0-20170206035902-86b7830d14cc
+go: finding github.com/sourcegraph/syntaxhighlight v0.0.0-20170531221838-bd320f5d308e
+go: finding github.com/shurcooL/users v0.0.0-20180125191416-49c67e49c537
+go: finding github.com/shurcooL/octicon v0.0.0-20181028054416-fa4f57f9efb2
+go: finding cloud.google.com/go v0.33.1
+go: finding github.com/golang/lint v0.0.0-20181026193005-c67002cb31c3
+go: finding google.golang.org/genproto v0.0.0-20181029155118-b69ba1387ce2
+go: finding github.com/microcosm-cc/bluemonday v1.0.1
+go: finding github.com/shurcooL/highlight_diff v0.0.0-20170515013008-09bb4053de1b
+go: finding github.com/shurcooL/gofontwoff v0.0.0-20180329035133-29b52fc0a18d
+go: finding gopkg.in/yaml.v2 v2.0.0-20170812160011-eb3733d160e7
+go: finding github.com/shurcooL/sanitized_anchor_name v0.0.0-20170918181015-86672fcb3f95
+go: finding dmitri.shuralyov.com/service/change v0.0.0-20181023043359-a85b471d5412
+go: finding github.com/shurcooL/issues v0.0.0-20181008053335-6292fdc1e191
+go: finding github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af
+go: finding google.golang.org/api v0.0.0-20181030000543-1d582fd0359e
+go: finding github.com/neelance/sourcemap v0.0.0-20151028013722-8c68805598ab
+go: finding golang.org/x/perf v0.0.0-20180704124530-6e6d33e29852
+go: finding github.com/shurcooL/httpgzip v0.0.0-20180522190206-b1c53ac65af9
+go: finding golang.org/x/oauth2 v0.0.0-20181017192945-9dcd33a902f4
+go: finding github.com/shurcooL/issuesapp v0.0.0-20180602232740-048589ce2241
+go: error loading module requirements
+[1](⎇ master) strip-ansi $ go build -ldflags '-w -s'
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: finding github.com/shurcooL/go-goon v0.0.0-20170922171312-37c2f522c041
+go: finding sourcegraph.com/sqs/pbtypes v0.0.0-20180604144634-d3ebe8f20ae4
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) strip-ansi $ go build -ldflags '-w -s'
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) strip-ansi $ go build -ldflags '-w -s'
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) strip-ansi $ pwd
+/go/src/github.com/davidwalter0/tools/cmd/strip-ansi
+[0](⎇ master) strip-ansi $ go mod tidy
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) strip-ansi $ go build -ldflags '-w -s'
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) strip-ansi $ cd ../..
+[0](⎇ master) tools $ go get
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go get
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go get
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod 
+Go mod provides access to operations on modules.
+
+Note that support for modules is built into all the go commands,
+not just 'go mod'. For example, day-to-day adding, removing, upgrading,
+and downgrading of dependencies should be done using 'go get'.
+See 'go help modules' for an overview of module functionality.
+
+Usage:
+
+	go mod <command> [arguments]
+
+The commands are:
+
+	download    download modules to local cache
+	edit        edit go.mod from tools or scripts
+	graph       print module requirement graph
+	init        initialize new module in current directory
+	tidy        add missing and remove unused modules
+	vendor      make vendored copy of dependencies
+	verify      verify dependencies have expected content
+	why         explain why packages or modules are needed
+
+Use "go help mod <command>" for more information about a command.
+
+[2](⎇ master) tools $ go mod verify
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why github.com/davidwalter0/go-cfg@v0.3.0
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod tidy
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why github.com/davidwalter0/go-cfg
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why github.com/davidwalter0/go-cfg
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why -h
+usage: go mod why [-m] [-vendor] packages...
+Run 'go help mod why' for details.
+[2](⎇ master) tools $ go mod why -m github.com/davidwalter0/go-cfg
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ mv go.mod go.mod.orig
+[0](⎇ master) tools $ go mod why -m github.com/davidwalter0/go-cfg
+go: creating new go.mod: module github.com/davidwalter0/tools
+go: finding github.com/duo-labs/webauthn/protocol latest
+go: finding github.com/davidwalter0/tools/hash latest
+go: downloading github.com/davidwalter0/go-signalstor v0.2.0
+go: finding github.com/duo-labs/webauthn latest
+go: finding github.com/pelletier/go-toml v1.6.0
+go: finding github.com/go-sql-driver/mysql v1.5.0
+go: downloading github.com/duo-labs/webauthn v0.0.0-20200106204955-07abdb9841e9
+go: finding github.com/jehiah/go-strftime latest
+go: downloading github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869
+go: extracting github.com/davidwalter0/go-signalstor v0.2.0
+go: extracting github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869
+go: extracting github.com/duo-labs/webauthn v0.0.0-20200106204955-07abdb9841e9
+go: finding github.com/duo-labs/webauthn/webauthn latest
+go: finding golang.org/x/net/context latest
+go: finding github.com/stretchr/testify/suite latest
+go: finding github.com/davidwalter0/transform latest
+go: downloading github.com/gorilla/securecookie v1.1.1
+go: downloading github.com/davidwalter0/transform v0.0.0-20170618010736-a7a822a3f327
+go: downloading github.com/go-sql-driver/mysql v1.5.0
+go: downloading github.com/pelletier/go-toml v1.6.0
+go: extracting github.com/davidwalter0/transform v0.0.0-20170618010736-a7a822a3f327
+go: extracting github.com/gorilla/securecookie v1.1.1
+go: extracting github.com/pelletier/go-toml v1.6.0
+go: extracting github.com/go-sql-driver/mysql v1.5.0
+go: finding golang.org/x/net latest
+go: downloading golang.org/x/net v0.0.0-20200114155413-6afb5195e5aa
+go: finding github.com/blang/semver v3.5.1+incompatible
+go: downloading github.com/blang/semver v3.5.1+incompatible
+go: extracting github.com/blang/semver v3.5.1+incompatible
+go: finding golang.org/x/text/unicode/norm latest
+go: extracting golang.org/x/net v0.0.0-20200114155413-6afb5195e5aa
+go: finding github.com/gorilla/sessions v1.2.0
+go: finding github.com/jinzhu/gorm v1.9.12
+go: finding golang.org/x/text/unicode latest
+go: finding gopkg.in/yaml.v3 latest
+go: downloading gopkg.in/yaml.v3 v3.0.0-20200121175148-a6ecf24a6d71
+go: extracting gopkg.in/yaml.v3 v3.0.0-20200121175148-a6ecf24a6d71
+go: downloading github.com/gorilla/sessions v1.2.0
+go: extracting github.com/gorilla/sessions v1.2.0
+go: downloading github.com/jinzhu/gorm v1.9.12
+go: extracting github.com/jinzhu/gorm v1.9.12
+go: finding github.com/mattn/go-sqlite3 v2.0.2+incompatible
+go: downloading github.com/mattn/go-sqlite3 v2.0.2+incompatible
+go: extracting github.com/mattn/go-sqlite3 v2.0.2+incompatible
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why -m github.com/davidwalter0/go-cfg
+go: downloading github.com/konsorten/go-windows-terminal-sequences v1.0.1
+go: downloading gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
+go: downloading github.com/jinzhu/now v1.0.1
+go: extracting github.com/konsorten/go-windows-terminal-sequences v1.0.1
+go: downloading github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5
+go: downloading github.com/lib/pq v1.1.1
+go: downloading github.com/BurntSushi/toml v0.3.1
+go: extracting github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5
+go: extracting github.com/jinzhu/now v1.0.1
+go: downloading github.com/denisenkom/go-mssqldb v0.0.0-20191124224453-732737034ffd
+go: extracting github.com/BurntSushi/toml v0.3.1
+go: extracting github.com/lib/pq v1.1.1
+go: extracting github.com/denisenkom/go-mssqldb v0.0.0-20191124224453-732737034ffd
+go: downloading github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe
+go: extracting github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe
+go: finding github.com/davidwalter0/tools/hash latest
+go: extracting gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
+go: finding gopkg.in/yaml.v3 latest
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why -m github.com/davidwalter0/go-cfg
+go: finding github.com/davidwalter0/tools/hash latest
+go: finding gopkg.in/yaml.v3 latest
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ master) tools $ go mod why -m github.com/davidwalter0/go-cfg
+go: finding github.com/davidwalter0/tools/hash latest
+go: finding gopkg.in/yaml.v3 latest
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ v0.0.2) tools $ go mod why -m github.com/davidwalter0/go-cfg
+go: finding github.com/davidwalter0/tools/hash latest
+go: finding gopkg.in/yaml.v3 latest
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ v0.0.2) tools $ go mod tidy
+go: finding github.com/davidwalter0/tools/hash latest
+go: finding gopkg.in/yaml.v3 latest
+go: finding github.com/davidwalter0/go-cfg v0.3.0
+go: github.com/davidwalter0/go-cfg@v0.3.0: unknown revision v0.3.0
+go: error loading module requirements
+[1](⎇ v0.0.2) tools $ go mod tidy
+go: finding gopkg.in/yaml.v3 latest
+[0](⎇ v0.0.2) tools $ go mod why -m github.com/davidwalter0/go-cfg
+# github.com/davidwalter0/go-cfg
+github.com/davidwalter0/tools/cmd/cookie/secure
+github.com/davidwalter0/go-cfg
+[0](⎇ v0.0.2) tools $ go mod why github.com/davidwalter0/go-cfg
+# github.com/davidwalter0/go-cfg
+github.com/davidwalter0/tools/cmd/cookie/secure
+github.com/davidwalter0/go-cfg
+[0](⎇ v0.0.2) tools $ go mod why
+# github.com/davidwalter0/tools
+github.com/davidwalter0/tools
+[0](⎇ v0.0.2) tools $ go mod 
+Go mod provides access to operations on modules.
+
+Note that support for modules is built into all the go commands,
+not just 'go mod'. For example, day-to-day adding, removing, upgrading,
+and downgrading of dependencies should be done using 'go get'.
+See 'go help modules' for an overview of module functionality.
+
+Usage:
+
+	go mod <command> [arguments]
+
+The commands are:
+
+	download    download modules to local cache
+	edit        edit go.mod from tools or scripts
+	graph       print module requirement graph
+	init        initialize new module in current directory
+	tidy        add missing and remove unused modules
+	vendor      make vendored copy of dependencies
+	verify      verify dependencies have expected content
+	why         explain why packages or modules are needed
+
+Use "go help mod <command>" for more information about a command.
+
+[2](⎇ v0.0.2) tools $ go mod verify
+all modules verified
+[0](⎇ v0.0.2) tools $ go mod vendor
+[0](⎇ v0.0.2) tools $ cd -
+/go/src/github.com/davidwalter0/tools/cmd/strip-ansi
+[0](⎇ v0.0.2) strip-ansi $ go build -ldflags '-w -s'
+[0](⎇ v0.0.2) strip-ansi $ ls
+strip-ansi  strip-ansi.go
+[0](⎇ v0.0.2) strip-ansi $ go install -ldflags '-w -s'
+[0](⎇ v0.0.2) strip-ansi $ strip-ansi 
+  C-c C-c
+[130](⎇ v0.0.2) strip-ansi $ pwd
+/go/src/github.com/davidwalter0/tools/cmd/strip-ansi
+[0](⎇ v0.0.2) strip-ansi $ exit
+
+Process shell<9> finished

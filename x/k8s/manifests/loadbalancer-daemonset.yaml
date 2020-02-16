@@ -1,0 +1,50 @@
+---
+# for versions before 1.8.0 use apps/v1beta1
+kind: DaemonSet
+apiVersion: apps/v1beta2
+metadata:
+  name: loadbalancer
+  namespace: default
+  labels:
+    app: loadbalancer
+spec:
+  selector:
+    matchLabels:
+      name: loadbalancer
+  template:
+    metadata:
+      labels:
+        name: loadbalancer
+    spec:
+      tolerations:
+        - key: node-role.kubernetes.io/loadbalancer
+          operator: Exists
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/loadbalancer
+                operator: Exists
+      containers:
+      - name: loadbalancer
+        image: davidwalter/loadbalancer:latest
+        # imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
+        securityContext:
+          privileged: true
+        args:
+        - "/opt/sbin/llb"
+        - "--linkdevice=eth2"
+        - "--debug"
+      terminationGracePeriodSeconds: 30
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      serviceAccount: loadbalancer
+
+
+# local variables:
+# mode: yaml
+# end:
+
